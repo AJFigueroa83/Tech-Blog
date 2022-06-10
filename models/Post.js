@@ -14,25 +14,25 @@ class Post extends Model {}
     postTitle: {
       type: DataTypes.STRING(25),
       allowNull: false,
-      unique: true,
+      unique: false,
     },
     postContent: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
+      unique: false,
     },
     dateCreated: {
       type: DataTypes.DATEONLY,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    userId: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },  
+    // userId: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'user',
+    //     key: 'id',
+    //   },
+    // },  
   },
   {
     sequelize,
